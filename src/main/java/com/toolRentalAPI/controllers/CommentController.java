@@ -18,9 +18,9 @@ public class CommentController {
 	private CommentService service; 
 	
 	public ResponseEntity<Object> createComment(@RequestBody Comment comment,
-			@PathVariable Long rentalId) {
+			@PathVariable Long rentalId, @RequestBody Boolean needsRepaired) {
 		try {
-			return new ResponseEntity<Object>(service.createComment(comment, rentalId), HttpStatus.OK);
+			return new ResponseEntity<Object>(service.createComment(comment, rentalId, needsRepaired), HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.BAD_REQUEST); 
 		}

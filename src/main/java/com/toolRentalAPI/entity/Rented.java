@@ -1,6 +1,7 @@
  package com.toolRentalAPI.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
+//import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,8 +16,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Rented {
 
 	private long id; 
-	private Date dateRented;
-	private Date dateReturned; 
+	private LocalDate dateRented;
+	private LocalDate dateReturned; 
 	
 	@JsonIgnore
 	private User user; 
@@ -33,19 +34,19 @@ public class Rented {
 		this.id = id;
 	}
 	
-	public Date getDateRented() {
+	public LocalDate getDateRented() {
 		return dateRented;
 	}
 	
-	public void setDateRented(Date dateRented) {
+	public void setDateRented(LocalDate dateRented) {
 		this.dateRented = dateRented;
 	}
 	
-	public Date getDateReturned() {
+	public LocalDate getDateReturned() {
 		return dateReturned;
 	}
 	
-	public void setDateReturned(Date dateReturned) {
+	public void setDateReturned(LocalDate dateReturned) {
 		this.dateReturned = dateReturned;
 	}
 	

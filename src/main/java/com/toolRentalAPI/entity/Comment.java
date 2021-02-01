@@ -20,7 +20,7 @@ public class Comment {
 	private boolean needsRepaired; 
 	
 	@JsonIgnore
-	private Rented rental; 
+	private Rental rental; 
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -58,11 +58,11 @@ public class Comment {
 
 	@ManyToOne
 	@JoinColumn(name = "rentalId")
-	public Rented getRental() {
+	public Rental getRental() {
 		return rental;
 	}
 
-	public void setRental(Rented rental) {
+	public void setRental(Rental rental) {
 		this.rental = rental;
 	}
 

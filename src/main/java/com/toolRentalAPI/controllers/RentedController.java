@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.toolRentalAPI.service.RentedService;
+import com.toolRentalAPI.service.RentalService;
 
 @RestController
 @RequestMapping("/users/{userId}/tools/{toolId}/rentals")
 public class RentedController {
 
 	@Autowired
-	private RentedService service; 
+	private RentalService service; 
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ResponseEntity<Object> getAllRentals() {

@@ -16,9 +16,9 @@ public class ToolService {
 		return repo.findAll(); 
 	}
 	
-	public Iterable<Tool> getToolsThatNeedRepaired() {
-		return repo.findByRepairNeed(true);
-	}
+//	public Iterable<Tool> getToolsThatNeedRepaired() {
+//		return repo.findByRepairNeed(true);
+//	}
 	
 	public Tool createTool(Tool tool) {
 		return repo.save(tool); 

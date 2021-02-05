@@ -12,7 +12,7 @@ import com.toolRentalAPI.entity.Tool;
 import com.toolRentalAPI.service.ToolService;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/tools")
 public class ToolController {
 
 	@Autowired
@@ -23,10 +23,10 @@ public class ToolController {
 		return new ResponseEntity<Object>(service.getTools(), HttpStatus.OK);
 	}
 	
-//	@RequestMapping(value="/repair", method=RequestMethod.GET)
-//	public ResponseEntity<Object> getToolsThatNeedRepaired() {
-//		return new ResponseEntity<Object>(service.getToolsThatNeedRepaired(), HttpStatus.OK);
-//	}
+	@RequestMapping(value="/repair", method=RequestMethod.GET)
+	public ResponseEntity<Object> getToolsThatNeedRepaired() {
+		return new ResponseEntity<Object>(service.getToolsThatNeedRepaired(), HttpStatus.OK);
+	}
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<Object> createTool(@RequestBody Tool tool) {

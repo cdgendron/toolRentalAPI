@@ -1,6 +1,5 @@
   package com.toolRentalAPI.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,7 +27,6 @@ public class User {
 		this.id = id;
 	}
 	
-//	@Column(unique = true)
 	public String getUsername() {
 		return username;
 	}

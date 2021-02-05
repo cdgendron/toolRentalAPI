@@ -43,20 +43,30 @@ public class RentalService {
 	
 	public Rental createRental(Long toolId, String username) throws Exception {
 		User user = userRepo.findByUsername(username);
-		Tool toolRequest = toolRepo.findById(toolId).get(); //this will need to change 
-		//I need to create an array that has all rented tools. 
+		Tool toolRequest = toolRepo.findById(toolId).get();
 		
 		if (user == null) {
 			throw new Exception("User not found."); 
-
-//		} else if (toolRequest == null) {
-//			throw new Exception("Tool in use"); //will need to adjust to check the array of rented tools. 
-		
-		}
+//		} else if (toolIsRented(toolId) == true) {
+//			throw new Exception("Tool in use"); 
+		} else {
 		Rental rental = new Rental(); 
 		rental.setTool(toolRequest);
 		rental.setUser(user);
 		rental.setDateRented(LocalDate.now());
 		return rental; 
+		}
 	}
+
+//	private Boolean toolIsRented(Long toolId) {
+//
+//		Rental rental = repo.getLatestToolRentedById(toolId);
+//
+//		if(rental.getDateReturned().compareTo(LocalDate.now()) > 0) {
+//			return true;
+//		} else {	
+//		return false;
+//		}
+//	}
+	
 }

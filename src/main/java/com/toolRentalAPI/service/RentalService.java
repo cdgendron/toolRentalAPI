@@ -47,8 +47,7 @@ public class RentalService {
 		
 		if (user == null) {
 			throw new Exception("User not found."); 
-//		} else if (toolIsRented(toolId) == true) {
-//			throw new Exception("Tool in use"); 
+
 		} else {
 		Rental rental = new Rental(); 
 		rental.setTool(toolRequest);
@@ -57,16 +56,5 @@ public class RentalService {
 		return rental; 
 		}
 	}
-
-//	private Boolean toolIsRented(Long toolId) {
-//
-//		Rental rental = repo.getLatestToolRentedById(toolId);
-//
-//		if(rental.getDateReturned().compareTo(LocalDate.now()) > 0) {
-//			return true;
-//		} else {	
-//		return false;
-//		}
-//	}
 	
 }

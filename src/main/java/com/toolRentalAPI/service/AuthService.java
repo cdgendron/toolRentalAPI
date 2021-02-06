@@ -21,6 +21,9 @@ public class AuthService {
 		User user = new User(); 
 		user.setUsername(cred.getUsername());
 		user.setHash(BCrypt.hashpw(cred.getPassword(), BCrypt.gensalt()));
+		user.setEmail(cred.getEmail());
+		user.setFirstName(cred.getFirstName());
+		user.setLastName(cred.getLastName());
 		try {
 			repo.save(user);
 			return user;

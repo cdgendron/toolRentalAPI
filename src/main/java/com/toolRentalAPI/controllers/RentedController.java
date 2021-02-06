@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.toolRentalAPI.service.RentalService;
 
 @RestController
-@RequestMapping("/users/{userId}/tools/{toolId}/rentals")
+@RequestMapping("/rentals")
 public class RentedController {
 
 	@Autowired
@@ -37,7 +37,7 @@ public class RentedController {
 		}
 	}
 	
-	@RequestMapping(method=RequestMethod.POST)
+	@RequestMapping(value="/tool/{toolId}", method=RequestMethod.POST)
 	public ResponseEntity<Object> createRental(@PathVariable Long toolId, @RequestBody String username) {
 		try {
 			return new ResponseEntity<Object>(service.createRental(toolId, username), HttpStatus.OK);
